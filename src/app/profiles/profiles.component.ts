@@ -11,9 +11,9 @@ import { debounce, switchMap, tap, retry } from 'rxjs/operators';
 })
 export class ProfilesComponent implements OnInit, OnDestroy {
 
-  private user: GithubProfile;
-  private repos: GithubRepos[];
-  private username = '';
+  public user: GithubProfile;
+  public repos: GithubRepos[];
+  public username = '';
   private unsubscribe$: Subject<boolean> = new Subject();
   public username$: Subject<string> = new Subject();
 
