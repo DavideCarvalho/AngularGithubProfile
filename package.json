@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:aot": "ng serve --aot",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +31,7 @@
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "^7.0.0",
     "@angular/language-service": "^7.0.0",
+    "@compodoc/compodoc": "^1.1.5",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~10.12.0",
