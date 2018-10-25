@@ -14,7 +14,6 @@ export class ProfilesComponent implements OnInit, OnDestroy {
   public user: GithubProfile;
   public repos: GithubRepos[];
   public username = '';
-  private unsubscribe$: Subject<boolean> = new Subject();
   public username$: Subject<string> = new Subject();
 
   constructor(
@@ -40,8 +39,7 @@ export class ProfilesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.unsubscribe$.next(true);
-    this.unsubscribe$.complete();
+    this.username$.complete();
   }
 
 }

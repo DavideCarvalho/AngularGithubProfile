@@ -9,54 +9,8 @@
 </div>
 
 <div *ngIf="user">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{user.name}}</h3>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-4">
-          <img class="img-thumbnail" src="{{user.avatar_url}}">
-          <a class="btn btn-default btn-block" target="_blank" href="{{user.html_url}}">View Profile</a>
-        </div>
-        <div class="col-md-8">
-          <div class="stats">
-            <span class="badge badge-default">{{user.public_repos}} Public Repos</span>
-            <span class="badge badge-primary">{{user.public_gists}} Public Gists</span>
-            <span class="badge badge-success">{{user.followers}} Followers</span>
-            <span class="badge badge-info">{{user.following}} Following</span>
-          </div>
-          <br>
-          <ul class="list-group">
-            <li class="list-group-item"><strong>Username: </strong>{{user.login}}</li>
-            <li class="list-group-item"><strong>Location: </strong>{{user.location}}</li>
-            <li class="list-group-item"><strong>Email: </strong>{{user.email}}</li>
-            <li class="list-group-item"><strong>Blog: </strong>{{user.blog}}</li>
-            <li class="list-group-item"><strong>Member Since: </strong>{{user.created_at}}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">User Repos</h3>
-    </div>
-    <div class="panel-body">
-      <div *ngFor="let repo of repos">
-        <div class="row">
-          <div class="col-md-9">
-            <h4> <a target="_blank" href="{{repo.html_url}}">{{repo.name}}</a></h4>
-            <p>{{repo.description}}</p>
-          </div>
-          <div class="col-md-3">
-            <span class="badge badge-default">{{repo.watchers}} Watchers</span>
-            <span class="badge badge-primary">{{repo.forks}} Forks</span>
-          </div>
-        </div>
-        <hr>
-      </div>
-    </div>
-  </div>
+  <app-profile-information [user]="user"></app-profile-information>
+
+  <app-repositories-information [repos]="repos"></app-repositories-information>
 </div>

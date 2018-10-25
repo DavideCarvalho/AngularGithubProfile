@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">User Repos</h3>
+  </div>
+  <div class="panel-body">
+    <div *ngFor="let repo of repos">
+      <div class="row">
+        <app-repository-card [repo]="repo"></app-repository-card>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
